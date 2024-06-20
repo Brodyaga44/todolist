@@ -1,7 +1,32 @@
+@import "src/styles/utils/media";
+@import "src/styles/utils/variables";
 .welcome{
+  position: absolute;
   display: grid;
   justify-items: center;
+  left: 40%;
+  top: 30%;
   &__title{
-    font-size: 100px;
+    font-family:$font;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 87.14px;
+    color: $titleColor;
+  }
+  &__slogan{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: left;
+    color: $subtitleColor;
+  }
+  &__container{
+    margin: 20px 0 0 0;
+  }
+  &__button {
+    background-color: #B47AEA;
+    display: flex;
+    width: 120px;
+    justify-content: center;
   }
 }

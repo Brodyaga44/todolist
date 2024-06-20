@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './styles/index.scss';
 
 import Welcome from "./widgets/Welcome/welcome";
 
