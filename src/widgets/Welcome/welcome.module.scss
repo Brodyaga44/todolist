@@ -1,0 +1,7 @@
+.welcome{
+  display: grid;
+  justify-items: center;
+  &__title{
+    font-size: 100px;
+  }
+}
