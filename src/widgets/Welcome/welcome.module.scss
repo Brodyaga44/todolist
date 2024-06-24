@@ -6,7 +6,13 @@
   justify-items: center;
   left: 40%;
   top: 30%;
+  gap: 42px;
+  &__items{
+    display: grid;
+    justify-items: center;
+  }
   &__title{
+    height: 82px;
     font-family:$font;
     font-size: 72px;
     font-weight: 700;
@@ -18,15 +24,33 @@
     font-weight: 700;
     line-height: 29.05px;
     text-align: left;
-    color: $subtitleColor;
+    color: $sloganColor;
   }
   &__container{
     margin: 20px 0 0 0;
   }
   &__button {
-    background-color: #B47AEA;
+    background-color: $purple;
     display: flex;
-    width: 120px;
+    width: 144px;
+    height: 45px;
     justify-content: center;
+    border-radius: 15px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  &__btnText{
+    width: 115px;
+    height: 39px;
+    font-weight: 700;
+    font-size: 24px;
+    color: $white;
+    line-height: 29.05px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+
   }
 }

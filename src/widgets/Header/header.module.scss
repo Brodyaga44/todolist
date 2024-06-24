@@ -1,0 +1,79 @@
+@import "src/styles/utils/media";
+@import "src/styles/utils/variables";
+
+.headerWrapper {
+  width: 100%;
+  color: $white;
+}
+.inner{
+  position: relative;
+  width: 100%;
+  max-width: 1520px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 var(--inner-pd);
+}
+.header{
+  font-family: $font;
+  &__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 0;
+  }
+.user{
+    display: flex;
+    &__wrapper{
+      display: grid;
+      align-content: center;
+    }
+    &__upperText{
+      color: $gray;
+      width: 152px;
+      height: 29px;
+      top: 41px;
+      left: 124px;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29.05px;
+      text-align: left;
+
+
+    }
+    &__bottomText{
+      color: $red;
+      width: 184px;
+      height: 29px;
+      top: 66px;
+      left: 124px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 29.05px;
+      text-align: left;
+
+
+    }
+  }
+  &__title{
+    color: $gray;
+    width: 236px;
+    height: 68px;
+    top: 27px;
+    left: 458px;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 77.45px;
+    text-align: left;
+  }
+  &__logout{
+    width: 83px;
+    height: 29px;
+    top: 49px;
+    left: 1015px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: left;
+  }
+}
