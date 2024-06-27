@@ -1,15 +1,18 @@
 @import "src/styles/utils/media";
 @import "src/styles/utils/variables";
 .welcome{
-  position: absolute;
-  display: grid;
-  justify-items: center;
-  left: 40%;
-  top: 30%;
+  font-family:$font;
+  display: flex;
+  flex-direction: column;
   gap: 42px;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
   &__items{
-    display: grid;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
   }
   &__title{
     height: 82px;
@@ -32,25 +35,19 @@
   &__button {
     background-color: $purple;
     display: flex;
-    width: 144px;
-    height: 45px;
+    padding: 8px 14px;
     justify-content: center;
     border-radius: 15px;
+    text-decoration: none;
     &:hover{
       cursor: pointer;
     }
   }
   &__btnText{
-    width: 115px;
-    height: 39px;
     font-weight: 700;
     font-size: 24px;
     color: $white;
     line-height: 29.05px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
 
   }
 }

@@ -1,25 +1,22 @@
 @import "src/styles/utils/media";
 @import "src/styles/utils/variables";
 
-.headerWrapper {
-  width: 100%;
-  color: $white;
-}
 .inner{
   position: relative;
-  width: 100%;
   max-width: 1520px;
   min-width: 320px;
-  margin: 0 auto;
-  padding: 0 var(--inner-pd);
+  //margin: 0 auto;
+  //padding: 0 10vh;
 }
 .header{
   font-family: $font;
+  width: 100%;
+  color: $white;
   &__content{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+    justify-content: space-around;
+    //gap: 24px;
     padding: 16px 0;
   }
 .user{
@@ -38,8 +35,6 @@
       font-weight: 700;
       line-height: 29.05px;
       text-align: left;
-
-
     }
     &__bottomText{
       color: $red;

@@ -1,0 +1,63 @@
+@import "src/styles/utils/media";
+@import "src/styles/utils/variables";
+
+.todo {
+  display: flex;
+  max-width: 1520px;
+  min-width: 320px;
+  margin: 95px 35vh;
+  padding: 0 var(--inner-pd);
+  flex-direction: column;
+  font-family:$font;
+  gap: 20px;
+  &__addTask{
+    display: flex;
+    gap: 16px;
+  }
+  &__add {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 24px;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+    color: $white;
+    background-color: $purple;
+    font-weight: 400;
+    line-height: 29.05px;
+    text-align: left;
+
+  }
+  &__addText{
+    color: $purple;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: left;
+  }
+}
+.Task {
+  display: flex;
+  gap: 20px;
+  font-family:$font;
+  list-style: none;
+  &__delete{
+    display: flex;
+  }
+  &__check{
+    height: 30px;
+  }
+  &__Text{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.05px;
+    text-align: left;
+    width: 71px;
+    height: 29px;
+  }
+}
+.ant-checkbox-inner{
+  transform: scale(2)
+}
