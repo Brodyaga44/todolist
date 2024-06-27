@@ -17,6 +17,14 @@ const ToDoPage = () => {
   };
   const onChange: CheckboxProps["onChange"] = (e) => {
     console.log(`checked = ${e.target.checked}`);
+    setToDos(
+        ToDos.map((ToDo)) =>
+        {
+          if (ToDo.done) {
+            ToDo.done == true;
+          }
+          return ToDo
+        }),
   };
   return (
     <div>
@@ -33,12 +41,11 @@ const ToDoPage = () => {
               return (
                 <span className={styles.Task}>
                   <img src={img} alt="" />
-                  <Checkbox onChange={onChange} className={styles.Task__check}>
-                    sdfsdf
+                  <Checkbox onChange={onChange} className={ styles.Task__check} >
+                    <li key={ToDo.id} className={ToDo.done ? {styles.Task__Text} : {styles.Task__doneTask} }>
+                      {ToDo.text}
+                    </li>
                   </Checkbox>
-                  <li key={ToDo.id} className={styles.Task__Text}>
-                    {ToDo.text}
-                  </li>
                 </span>
               );
             })}

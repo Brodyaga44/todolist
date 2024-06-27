@@ -57,7 +57,13 @@
     width: 71px;
     height: 29px;
   }
+  &__doneTask {
+    text-decoration: line-through;
+  }
 }
-.ant-checkbox-inner{
-  transform: scale(2)
+:global {
+  .ant-checkbox-inner{
+    transform: scale(1.3)
+  }
 }
+
