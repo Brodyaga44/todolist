@@ -7,25 +7,30 @@ import { useState } from "react";
 import Form from "../Form/Form";
 
 const ToDoPage = () => {
-  const [ToDos, setToDos] = useState([]);
+  const [toDos, setToDos] = useState<
+    { id: number; text: string; done: boolean }[]
+  >([]);
   const putToDo = (value: any) => {
     if (value) {
-      setToDos([...ToDos, { id: Date.now(), text: value, done: false }]);
+      setToDos([...toDos, { id: Date.now(), text: value, done: false }]);
     } else {
       alert("Enter TEXT");
     }
   };
-  const onChange: CheckboxProps["onChange"] = (e) => {
-    console.log(`checked = ${e.target.checked}`);
-    setToDos(
-        ToDos.map((ToDo)) =>
-        {
-          if (ToDo.done) {
-            ToDo.done == true;
-          }
-          return ToDo
-        }),
+  const onChange = (id: number) => {
+    setToDos((prev) =>
+      prev.map((toDo) => {
+        if (toDo.id === id) {
+          return {
+            ...toDo,
+            done: !toDo.done,
+          };
+        }
+        return toDo;
+      }),
+    );
   };
+
   return (
     <div>
       <Header />
@@ -37,13 +42,21 @@ const ToDoPage = () => {
         </div>
         <div className={styles.Task}>
           <ul>
-            {ToDos.map((ToDo) => {
+            {toDos.map((toDo) => {
               return (
-                <span className={styles.Task}>
+                <span key={toDo.id} className={styles.Task}>
                   <img src={img} alt="" />
-                  <Checkbox onChange={onChange} className={ styles.Task__check} >
-                    <li key={ToDo.id} className={ToDo.done ? {styles.Task__Text} : {styles.Task__doneTask} }>
-                      {ToDo.text}
+                  <Checkbox
+                    onChange={() => onChange(toDo.id)}
+                    className={styles.Task__check}
+                  >
+                    <li
+                      key={toDo.id}
+                      className={
+                        !toDo.done ? styles.Task__Text : styles.Task__doneTask
+                      }
+                    >
+                      {toDo.text}
                     </li>
                   </Checkbox>
                 </span>
