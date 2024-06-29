@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./form.module.scss";
 
 const Form = (props: any) => {
   const [value, setValue] = useState("");
@@ -11,6 +12,7 @@ const Form = (props: any) => {
       }}
     >
       <input
+        className={styles.form__inputWrapper}
         placeholder="Add New Task"
         value={value}
         onChange={(e) => setValue(e.target.value)}

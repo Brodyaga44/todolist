@@ -1,0 +1,18 @@
+@import "src/styles/utils/media";
+@import "src/styles/utils/variables";
+
+.form {
+  &__inputWrapper {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: left;
+    color: $black;
+    border: none;
+  }
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: $purple;
+}

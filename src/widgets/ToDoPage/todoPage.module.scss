@@ -8,62 +8,73 @@
   margin: 95px 35vh;
   padding: 0 var(--inner-pd);
   flex-direction: column;
-  font-family:$font;
   gap: 20px;
-  &__addTask{
+  font-family: $font;
+
+  &__addTask {
     display: flex;
     gap: 16px;
   }
+
   &__add {
     display: flex;
     width: 30px;
     height: 30px;
-    border-radius: 20px;
-    font-size: 24px;
     justify-content: center;
     align-items: flex-end;
     flex-direction: row;
-    color: $white;
-    background-color: $purple;
+    font-size: 24px;
     font-weight: 400;
     line-height: 29.05px;
     text-align: left;
+    color: $white;
+    background-color: $purple;
+    border-radius: 20px;
+  }
 
+  &__tasksContainer {
+    display: flex;
+    gap: 20px;
+    font-family: $font;
+    list-style: none;
   }
-  &__addText{
-    color: $purple;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 29.05px;
-    text-align: left;
+
+  &__taskItem {
+    display: flex;
+    padding-bottom: 5px;
+    gap: 10px;
   }
-}
-.Task {
-  display: flex;
-  gap: 20px;
-  font-family:$font;
-  list-style: none;
-  &__delete{
+
+  &__taskDelete {
     display: flex;
   }
-  &__check{
+
+  &__taskCheck {
     height: 30px;
   }
-  &__Text{
+
+  &__notdoneTask {
+    width: 71px;
+    height: 29px;
     font-size: 24px;
     font-weight: 500;
     line-height: 29.05px;
     text-align: left;
+  }
+
+  &__doneTask {
     width: 71px;
     height: 29px;
-  }
-  &__doneTask {
     text-decoration: line-through;
-  }
-}
-:global {
-  .ant-checkbox-inner{
-    transform: scale(1.3)
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.05px;
+    text-align: left;
   }
 }
 
+:global {
+  .ant-checkbox-inner {
+    transform: scale(1.3);
+  }
+}

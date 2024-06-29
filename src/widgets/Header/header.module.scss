@@ -1,71 +1,78 @@
 @import "src/styles/utils/media";
 @import "src/styles/utils/variables";
 
-.inner{
+.inner {
   position: relative;
-  max-width: 1520px;
+  //max-width: 1520px;
   min-width: 320px;
   //margin: 0 auto;
   //padding: 0 10vh;
 }
-.header{
+
+.header {
+  width: 90%;
   font-family: $font;
-  width: 100%;
   color: $white;
-  &__content{
+
+  &__content {
     display: flex;
     align-items: center;
     justify-content: space-around;
     //gap: 24px;
     padding: 16px 0;
   }
-.user{
+
+  &__user {
     display: flex;
-    &__wrapper{
-      display: grid;
-      align-content: center;
-    }
-    &__upperText{
-      color: $gray;
-      width: 152px;
-      height: 29px;
-      top: 41px;
-      left: 124px;
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 29.05px;
-      text-align: left;
-    }
-    &__bottomText{
-      color: $red;
-      width: 184px;
-      height: 29px;
-      top: 66px;
-      left: 124px;
-      font-size: 24px;
-      font-weight: 500;
-      line-height: 29.05px;
-      text-align: left;
-
-
-    }
   }
-  &__title{
+
+  &__userWrapper {
+    display: grid;
+    align-content: center;
+  }
+
+  &__userUpperText {
+    top: 41px;
+    left: 124px;
+    width: 152px;
+    height: 29px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: left;
     color: $gray;
-    width: 236px;
-    height: 68px;
+  }
+
+  &__userBottomText {
+    width: 184px;
+    min-width: 280px;
+    height: 29px;
+    top: 66px;
+    left: 124px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.05px;
+    text-align: left;
+    color: $red;
+  }
+
+  &__title {
     top: 27px;
     left: 458px;
+    width: 236px;
+    height: 68px;
     font-size: 64px;
     font-weight: 700;
     line-height: 77.45px;
     text-align: left;
+    color: $gray;
   }
-  &__logout{
-    width: 83px;
-    height: 29px;
+
+  &__logout {
     top: 49px;
     left: 1015px;
+    width: 83px;
+    height: 29px;
     font-size: 24px;
     font-weight: 700;
     line-height: 29.05px;
