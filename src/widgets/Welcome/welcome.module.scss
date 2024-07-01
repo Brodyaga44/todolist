@@ -1,53 +1,44 @@
 @import "src/styles/utils/media";
 @import "src/styles/utils/variables";
-.welcome{
-  font-family:$font;
+.welcome {
   display: flex;
   flex-direction: column;
-  gap: 42px;
   align-items: center;
-  height: 100vh;
   justify-content: center;
-  &__items{
+  height: 100vh;
+  gap: 42px;
+  font-family: $font;
+
+  &__content {
     display: flex;
     flex-direction: column;
     align-items: center;
-
   }
-  &__title{
-    height: 82px;
-    font-family:$font;
-    font-size: 72px;
-    font-weight: 700;
-    line-height: 87.14px;
+  &__title {
+    font: 700 72px/1.1 $font;
     color: $titleColor;
   }
-  &__slogan{
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 29.05px;
-    text-align: left;
+
+  &__slogan {
+    font: 700 24px/1.1 $font;
     color: $sloganColor;
   }
-  &__container{
-    margin: 20px 0 0 0;
-  }
+
   &__button {
-    background-color: $purple;
     display: flex;
-    padding: 8px 14px;
     justify-content: center;
-    border-radius: 15px;
+    padding: 8px 14px;
     text-decoration: none;
-    &:hover{
+    background-color: $purple;
+    border-radius: 15px;
+
+    &:hover {
       cursor: pointer;
     }
   }
-  &__btnText{
-    font-weight: 700;
-    font-size: 24px;
-    color: $white;
-    line-height: 29.05px;
 
+  &__buttonText {
+    font: 700 24px/1.1 $font;
+    color: $white;
   }
 }

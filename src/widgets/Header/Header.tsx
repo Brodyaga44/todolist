@@ -13,7 +13,7 @@ const Header = ({ pending, taskCounter }: HeaderProps) => {
               <div>
                 <img src={chel} alt="" />
               </div>
-              <div className={styles.header__userWrapper}>
+              <div className={styles.header__userContent}>
                 <div className={styles.header__userUpperText}>Hi Ishak 👋🏽</div>
                 <div className={styles.header__userBottomText}>
                   <span>{pending} tasks pending </span>

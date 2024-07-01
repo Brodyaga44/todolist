@@ -26,14 +26,12 @@
     display: flex;
   }
 
-  &__userWrapper {
+  &__userContent {
     display: grid;
     align-content: center;
   }
 
   &__userUpperText {
-    top: 41px;
-    left: 124px;
     width: 152px;
     height: 29px;
     font-size: 24px;

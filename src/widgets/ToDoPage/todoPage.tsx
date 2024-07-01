@@ -2,7 +2,6 @@ import Header from "../Header/Header";
 import styles from "./todoPage.module.scss";
 import img from "../../assets/delete.svg";
 import { Checkbox } from "antd";
-import type { CheckboxProps } from "antd";
 import { useEffect, useState } from "react";
 import Form from "../Form/Form";
 import { IToDo } from "../../shared/interfaces/IToDo";
@@ -13,12 +12,12 @@ const ToDoPage = () => {
   const [pending, setPending] = useState(0);
 
   useEffect(() => {
-    setPending(toDos.filter((toDo) => toDo.done === false).length);
-  });
+    setPending(toDos.filter((toDo) => !toDo.isDone).length);
+  }, [toDos]);
 
   const putToDo = (value: any) => {
     if (value) {
-      setToDos([...toDos, { id: Date.now(), text: value, done: false }]);
+      setToDos([...toDos, { id: Date.now(), text: value, isDone: false }]);
       setTaskCounter(taskCounter + 1);
     } else {
       alert("Enter TEXT");
@@ -30,7 +29,7 @@ const ToDoPage = () => {
         if (toDo.id === id) {
           return {
             ...toDo,
-            done: !toDo.done,
+            isDone: !toDo.isDone,
           };
         }
         return toDo;
@@ -67,7 +66,7 @@ const ToDoPage = () => {
                     <li
                       key={toDo.id}
                       className={
-                        !toDo.done
+                        !toDo.isDone
                           ? styles.todo__notdoneTask
                           : styles.todo__doneTask
                       }
