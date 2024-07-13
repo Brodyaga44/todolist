@@ -9,6 +9,9 @@
     text-align: left;
     color: $black;
     border: none;
+    @include media-mobile {
+     width: 80%;
+    }
   }
 }
 

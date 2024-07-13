@@ -3,10 +3,7 @@
 
 .inner {
   position: relative;
-  //max-width: 1520px;
   min-width: 320px;
-  //margin: 0 auto;
-  //padding: 0 10vh;
 }
 
 .header {
@@ -18,8 +15,10 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    //gap: 24px;
     padding: 16px 0;
+    @include media-mobile {
+      flex-direction: column;
+    }
   }
 
   &__user {
@@ -52,6 +51,14 @@
     line-height: 29.05px;
     text-align: left;
     color: $red;
+    @include media-mobile {
+      display: flex;
+      width: 205px;
+      min-width: unset;
+      flex-direction: row;
+      gap: 5px;
+      font-size: 18px;
+    }
   }
 
   &__title {

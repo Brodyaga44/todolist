@@ -2,7 +2,7 @@ import Header from "../Header/Header";
 import styles from "./todoPage.module.scss";
 import img from "../../assets/delete.svg";
 import { Checkbox } from "antd";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Form from "../Form/Form";
 import { IToDo } from "../../shared/interfaces/IToDo";
 
@@ -42,23 +42,34 @@ const ToDoPage = () => {
     setToDos(updatedToDo);
     setTaskCounter(taskCounter - 1);
   };
+  const CurrRef = useRef<HTMLInputElement | null>(null);
+  const handleClick = () => {
+    console.log(CurrRef);
+    if (CurrRef && CurrRef.current) {
+      CurrRef.current && CurrRef.current.focus();
+    }
+  };
 
   return (
-    <div>
+    <div className={styles.todo__content}>
       <Header pending={pending} taskCounter={taskCounter} />
       <div className={styles.todo}>
-        <div className={styles.todo__addTask}>
+        <div className={styles.todo__addTask} onClick={handleClick}>
           <span className={styles.todo__add}>+</span>
-          <Form putToDo={putToDo} />
+          <Form putToDo={putToDo} CurrRef={CurrRef} />
         </div>
         <div className={styles.todo__tasksContainer}>
-          <ul>
+          <ul className={styles.todo__taskItems}>
             {toDos.map((toDo) => {
+              console.log(toDos);
               return (
-                <span key={toDo.id} className={styles.todo__taskItem}>
-                  <span onClick={() => deleteToDo(toDo.id)}>
+                <div key={toDo.id} className={styles.todo__taskItem}>
+                  <div
+                    onClick={() => deleteToDo(toDo.id)}
+                    className={styles.todo__taskDelete}
+                  >
                     <img src={img} alt="" />
-                  </span>
+                  </div>
                   <Checkbox
                     onChange={() => onChange(toDo.id)}
                     className={styles.todo__taskCheck}
@@ -74,7 +85,7 @@ const ToDoPage = () => {
                       {toDo.text}
                     </li>
                   </Checkbox>
-                </span>
+                </div>
               );
             })}
           </ul>
